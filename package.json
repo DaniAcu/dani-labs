@@ -1,0 +1,26 @@
+{
+  "name": "dani-labs",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^2.2.1",
+    "@astrojs/solid-js": "^2.2.0",
+    "@astrojs/svelte": "^3.1.0",
+    "@astrojs/vue": "^2.2.1",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "astro": "^2.8.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "solid-js": "^1.7.8",
+    "svelte": "^4.0.5",
+    "vue": "^3.3.4"
+  }
+}
