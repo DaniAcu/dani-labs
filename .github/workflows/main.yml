@@ -18,7 +18,7 @@ jobs:
         if [[ -n "$pr_exists" ]]; then
           echo "PR already exists (PR Number: $pr_number). Closing..."
         else
-          gh pr create --base main --head "$branch_name" -t "Sync Main: Update with $branch_name" 
+          gh pr create --base main --head "$branch_name" -t "Sync Main: Update with $branch_name" -b ""
         fi
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
