@@ -14,6 +14,7 @@ jobs:
     - name: Create PR
       run: |
         branch_name=$(echo "${GITHUB_REF#refs/heads/}")
-        echo $branch_name
+        pr_exists=$(gh pr list --base main --head "$branch_name" -q ".state==OPEN")
+        echo $pr_exists
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
