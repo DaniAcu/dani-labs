@@ -16,13 +16,13 @@ Hi! I'm Dani, **this site is in progress**. I will publish my experiments here, 
 
 <style>
 	.container {
-		display: grid;
-    margin: 1rem;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(max(40%, 350px),1fr));
-    align-items: center;
-    line-height: 1.5rem;
-    max-width: 80%;
+	    display: grid;
+	    margin: 1rem;
+	    gap: 1rem;
+	    grid-template-columns: repeat(auto-fill, minmax(max(40%, 350px),1fr));
+	    align-items: center;
+	    line-height: 1.5rem;
+	    max-width: 80%;
 	}
 
 	.container img {
