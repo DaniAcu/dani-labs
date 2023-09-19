@@ -1,0 +1,19 @@
+name: Create PR on Push
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Create PR
+      run: |
+        branch_name=$(echo "${GITHUB_REF#refs/heads/}")
+        echo $branch_name
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
