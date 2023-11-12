@@ -1,52 +1,46 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useRef } from "react";
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 
 import "./styles.css";
-import useSlider from "./useSlider";
 
 export function ImageCarousel () {
-  const el = React.useRef(null)
-  const slider = useSlider();
-
-  useEffect(() => {
+  const el = useRef();
+  useLenis(lenis => {
+    console.log(lenis)
     const carousel = el.current;
-    const images = Array.from(el.current.querySelectorAll("img"));
+    const images = Array.from(carousel.querySelectorAll("img"));
 
-    carousel.animate({
-      transform: `translate(${slider.movement}%, -50%)`
-    }, { duration: 1200, fill: "forwards" })
+    const movement = (100 * lenis.animatedScroll / lenis.dimensions.scrollWidth)
 
     images.forEach(image => {
       image.animate({
-        objectPosition: `${slider.movement + 100}% 50%`
+        objectPosition: `${movement}% 50%`
       }, { duration: 1200, fill: "forwards" })
     })
-    
-  }, [el, slider.movement])
-
-
+  }, [el])
 
   return (
-    <section
-      className="carousel"
-      onTouchStart={slider.touch}
-      onMouseDown={slider.touch}
-      onTouchMove={slider.move}
-      onMouseMove={slider.move}
-      onTouchEnd={slider.touch}
-      onMouseUp={slider.release}
+    <ReactLenis 
+      root 
+      options={{
+        orientation: "horizontal",
+        gestureOrientation: "horizontal"
+      }}
     >
-      <ul ref={el}>
-        {
-          images.map(image => {
-            return (
-              <li key={image.url}>
-                <img src={image.url} alt={image.alt} draggable={false} />
-              </li>
-            )
-          })
-        }
-      </ul>
-    </section>
+      <section className="carousel">
+          <ul ref={el}>
+            {
+              images.map(image => {
+                return (
+                  <li key={image.url}>
+                    <img src={image.url} alt={image.alt} draggable={false} />
+                  </li>
+                )
+              })
+            }
+          </ul>
+      </section>
+    </ReactLenis>
   )
   
 }

@@ -29,9 +29,10 @@ body {
   display: flex;
   gap: 4vmin;
   position: absolute;
-  left: 50%;
   top: 50%;
   transform: translate(0%, -50%);
+  padding-left: 50%;
+  padding-right: 50%;
   user-select: none;
 }
 
