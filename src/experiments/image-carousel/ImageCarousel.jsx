@@ -6,7 +6,6 @@ import "./styles.css";
 export function ImageCarousel () {
   const el = useRef();
   useLenis(lenis => {
-    console.log(lenis)
     const carousel = el.current;
     const images = Array.from(carousel.querySelectorAll("img"));
 
