@@ -38,8 +38,7 @@ onMounted(() => {
         trigger: ".boxes",
         scrub: true,
         start: "top bottom",
-        end: "bottom bottom",
-        markers: true,
+        end: "bottom bottom"
       }
     }
   })
@@ -78,9 +77,9 @@ onMounted(() => {
       <img class="image" :src="headerImg" alt="Autumn season trees">
     </div>
   </header>
-  <section class="flex h-screen h-dvh p-32 gap-32">
-    <Grid />
-    <div class="flex flex-col py-32">
+  <section class="flex flex-col h-screen h-dvh px-[10vw] py-[10vh] items-center md:flex-row ">
+    <Grid class="flex-[2]"/>
+    <div class="flex-[3] flex flex-col py-32">
       <h2 class="text-5xl mb-3">The Beauty of Autumn</h2>
       <p class="text-lg font-light ">
         One of the most striking features of autumn is the dramatic change in foliage. Deciduous trees, which lose their leaves annually, put on a spectacular display of color as their leaves turn from green to vibrant shades of red, orange, yellow, and brown. This transformation occurs due to changes in the length of daylight and temperature, which signal trees to prepare for the dormant winter period.

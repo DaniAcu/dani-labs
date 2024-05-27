@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { ImageManager } from '../../../images/ImageManager';
 
+const props = defineProps(['class'])
+
 const images = [
     ImageManager.get("5gdxBw2VyVI", "low"),
     ImageManager.get("pT2zu7UsoX4", "low"),
@@ -11,7 +13,7 @@ const images = [
 </script>
 
 <template>
-    <div class="boxes flex gap-4">
+    <div :class="['boxes flex gap-4', props.class]">
         <div class="flex flex-col gap-4">
             <div class="box box-1 aspect-[3/5]">
                 <img class="w-full h-full object-cover" :src="images[0]" alt="" />
