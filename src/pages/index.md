@@ -1,14 +1,13 @@
 ---
-layout: "../layout/retro/RetroLayout.astro"
+layout: "../layout/default.astro"
 ---
 
 <div class="container">
 
-<img src="/dani.png" alt="Dani's head" width="300" />
-
-Hi! I'm Dani, **this site is in progress**. I will publish my experiments here, thanks for your short visit.
-
-
+<img src="../dani.png" alt="Dani's head" width="300" />
+<p>
+Hi! I'm Dani, <strong>this site is in progress</strong>. I will publish my experiments here, thanks for your short visit.
+</p>
 </div>
 
 
