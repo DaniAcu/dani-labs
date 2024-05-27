@@ -18,8 +18,7 @@ const headerImg = ImageManager.get("EOIToTneyZ4", "high");
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger);
-  const timeline = gsap.timeline()
-  timeline.to(".image-frame", {
+  gsap.to(".image-frame", {
     "--horizontal": 0,
     "--vertical": 0,
     scrollTrigger: {
@@ -30,6 +29,38 @@ onMounted(() => {
       pinSpacing: true,
       
     }
+  })
+
+  const timeline = gsap.timeline({
+    defaults: {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".boxes",
+        scrub: true,
+        start: "top bottom",
+        end: "bottom bottom",
+        markers: true,
+      }
+    }
+  })
+  timeline.from(".box-1", {
+    y: -100,
+    x: -100,
+  });
+
+  timeline.from(".box-2", {
+    y: 100,
+    x: -100,
+  });
+
+  timeline.from(".box-3", {
+    y: -100,
+    x: 100,
+  })
+
+  timeline.from(".box-4", {
+    y: 100,
+    x: 100,
   })
 })
 
