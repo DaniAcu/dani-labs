@@ -9,8 +9,6 @@ import { onMounted } from 'vue'
 
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import ScrollSmoother from "gsap/dist/ScrollSmoother";
-
 import Grid from './components/Grid.vue';
 import { ImageManager } from '../../images/ImageManager';
 
@@ -18,8 +16,7 @@ import { ImageManager } from '../../images/ImageManager';
 const headerImg = ImageManager.get("EOIToTneyZ4", "high");
 
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-  ScrollSmoother.create({ smooth: 1, effects: true, smoothTouch: 0.1 });
+  gsap.registerPlugin(ScrollTrigger);
   gsap.to(".image-frame", {
     "--horizontal": 0,
     "--vertical": 0,
