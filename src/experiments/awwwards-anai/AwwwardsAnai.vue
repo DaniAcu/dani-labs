@@ -11,11 +11,13 @@ import gsap from 'gsap';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 import Grid from './components/Grid.vue';
+import { ImageManager } from '../../images/ImageManager';
 
-gsap.registerPlugin(ScrollTrigger);
+
+const headerImg = ImageManager.get("EOIToTneyZ4", "high");
 
 onMounted(() => {
-  console.log(gsap);
+  gsap.registerPlugin(ScrollTrigger);
   const timeline = gsap.timeline()
   timeline.to(".image-frame", {
     "--horizontal": 0,
@@ -42,7 +44,7 @@ onMounted(() => {
     </h1>
 
     <div class="image-frame">
-      <img class="image" src="https://source.unsplash.com/EOIToTneyZ4" alt="Autumn season trees">
+      <img class="image" :src="headerImg" alt="Autumn season trees">
     </div>
   </header>
   <section class="flex h-screen h-dvh p-32 gap-32">
@@ -61,6 +63,7 @@ onMounted(() => {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     box-sizing: border-box;
+    background-color: #EFECEC;
   }
 
   * {
