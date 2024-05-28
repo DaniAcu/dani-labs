@@ -121,6 +121,7 @@ onMounted(() => {
   .image-frame {
     --horizontal: 35%;
     --vertical: 5%;
+    will-change: clip-path;
     clip-path: inset(var(--vertical) var(--horizontal));
   }
 
