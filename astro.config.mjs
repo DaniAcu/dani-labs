@@ -8,10 +8,5 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    build: {
-      sourcemap: false, // disables sourcemaps to avoid error
-    },
-  },
   integrations: [svelte(), react(), vue(), tailwind()]
 });
